@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
         marginBottom: 4
     },
     buttonText: {
-        color: '#1B1D1E',
+        color: '#333638',
         fontSize: 24,
         fontWeight: "bold"
     }

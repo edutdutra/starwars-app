@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
         width: 350,
         borderRadius: 10,
         alignItems: "center",
-        marginBottom: 5
+        marginBottom: 5,
+        paddingHorizontal: 12
     },
     info: {
         color: '#1B1D1E',

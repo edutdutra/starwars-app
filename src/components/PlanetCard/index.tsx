@@ -8,12 +8,12 @@ type Props = {}
 export function PlanetCard({}: Props) {
     return (
         <View style={styles.container}>
-            <MaterialCommunityIcons name="earth" size={24} color="black"/>
+            <MaterialCommunityIcons name="earth" size={24} color="#1B1D1E"/>
             <Text style={styles.info}>
                 Terra
             </Text>
 
-            <MaterialCommunityIcons name="terrain" size={24} color="black"/>
+            <MaterialCommunityIcons name="terrain" size={24} color="#1B1D1E"/>
             <Text style={styles.info}>
                 Deserto
             </Text>

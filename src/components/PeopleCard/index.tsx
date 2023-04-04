@@ -12,7 +12,7 @@ export function PeopleCard({}: Props) {
                 Eduardo - 15/08/1999
             </Text>
             <TouchableOpacity>
-                <FontAwesome5 name="space-shuttle" size={24} color="black" />
+                <FontAwesome5 name="space-shuttle" size={24} color="#1B1D1E" />
             </TouchableOpacity>
         </View>
     )

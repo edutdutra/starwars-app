@@ -8,11 +8,13 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fde047',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 4
+        marginBottom: 4,
+        flexDirection: 'row'
     },
     buttonText: {
         color: '#333638',
         fontSize: 24,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginLeft: 10
     }
 });

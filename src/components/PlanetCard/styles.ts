@@ -7,13 +7,14 @@ export const styles = StyleSheet.create({
         padding: 8,
         width: 350,
         borderRadius: 10,
-        alignItems: "center",
-        marginBottom: 5
+        marginBottom: 5,
+        alignItems: "center"
     },
     info: {
         color: '#1B1D1E',
         fontSize: 20,
         fontWeight: '400',
-        flex: 1
+        flex: 1,
+        marginLeft: 10
     }
 });

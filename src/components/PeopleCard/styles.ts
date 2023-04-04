@@ -11,10 +11,18 @@ export const styles = StyleSheet.create({
         marginBottom: 5,
         paddingHorizontal: 12
     },
-    info: {
+    content: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    infoText: {
         color: '#1B1D1E',
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: '400',
-        flex: 1
+        marginLeft: 8
+    },
+    dateContent: {
+        flexDirection: 'row',
+        marginLeft: 10
     }
 });

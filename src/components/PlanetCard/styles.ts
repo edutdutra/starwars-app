@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         marginBottom: 5,
         alignItems: "center"
     },
-    info: {
+    infoText: {
         color: '#1B1D1E',
         fontSize: 20,
         fontWeight: '400',

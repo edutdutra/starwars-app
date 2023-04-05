@@ -1,13 +1,33 @@
 import {FlatList, Text, View} from "react-native";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 import {Header} from "../../components/Header";
 import {Title} from "../../components/Title";
 import {PlanetCard} from "../../components/PlanetCard";
 
+import {PlanetDTO} from "../../dtos/PlanetDTO";
+
 import {styles} from "./styles";
 
+
 export function Planets() {
-    const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+    const [planets, setPlanets] = useState<PlanetDTO[]>();
+
+    async function fetchPlanets() {
+        try {
+            const {data} = await axios.get('https://swapi.dev/api/planets');
+
+            setPlanets(data.results);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchPlanets();
+    }, [])
+
 
     return (
         <View style={styles.container}>
@@ -17,9 +37,10 @@ export function Planets() {
             <View style={styles.listContent}>
                 {/*ajustar quando puxar os dados*/}
                 <FlatList
-                    data={data}
+                    data={planets}
+                    keyExtractor={item => item.name}
                     renderItem={({item}) => (
-                        <PlanetCard/>
+                        <PlanetCard data={item}/>
                     )}
                     showsVerticalScrollIndicator={false}
                     ListEmptyComponent={() => (

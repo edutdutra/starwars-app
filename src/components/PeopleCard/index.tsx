@@ -1,24 +1,28 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {FontAwesome5} from '@expo/vector-icons';
 
+import {PeopleDTO} from "../../dtos/PeopleDTO";
+
 import {styles} from "./styles";
 
-type Props = {}
+type Props = {
+    data: PeopleDTO;
+}
 
-export function PeopleCard({}: Props) {
+export function PeopleCard({data}: Props) {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
 
                 <FontAwesome5 name="user-astronaut" size={22} color="black"/>
                 <Text style={styles.infoText}>
-                    Eduardo
+                    {data.name}
                 </Text>
 
                 <View style={styles.dateContent}>
                     <FontAwesome5 name="birthday-cake" size={22} color="#1B1D1E"/>
                     <Text style={styles.infoText}>
-                        15/08/1999
+                        {data.birth_year}
                     </Text>
                 </View>
 

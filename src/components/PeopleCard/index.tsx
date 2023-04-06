@@ -1,6 +1,9 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {FontAwesome5} from '@expo/vector-icons';
 
+import {useNavigation} from "@react-navigation/native";
+import {AppNavigatorRoutesProps} from "../../routes/app.routes";
+
 import {PeopleDTO} from "../../dtos/PeopleDTO";
 
 import {styles} from "./styles";
@@ -10,6 +13,13 @@ type Props = {
 }
 
 export function PeopleCard({data}: Props) {
+    const navigation = useNavigation<AppNavigatorRoutesProps>();
+
+
+    function handleGoToStarships() {
+        navigation.navigate('starships', {urls: data.starships, peopleName: data.name})
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.content}>
@@ -28,7 +38,7 @@ export function PeopleCard({data}: Props) {
 
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleGoToStarships}>
                 <FontAwesome5 name="space-shuttle" size={24} color="#1B1D1E"/>
             </TouchableOpacity>
         </View>

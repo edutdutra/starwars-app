@@ -1,4 +1,4 @@
-import {FlatList, Text, View} from "react-native";
+import {Alert, FlatList, Text, View} from "react-native";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
@@ -12,7 +12,7 @@ import {styles} from "./styles";
 
 
 export function Planets() {
-    const [planets, setPlanets] = useState<PlanetDTO[]>();
+    const [planets, setPlanets] = useState<PlanetDTO[]>([]);
 
     async function fetchPlanets() {
         try {
@@ -20,7 +20,8 @@ export function Planets() {
 
             setPlanets(data.results);
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            Alert.alert('Planetas', 'Não foi possível carregar os planetas');
         }
     }
 
@@ -35,7 +36,6 @@ export function Planets() {
             <Title title="Planetas" subtitle="De todos os filmes do Star Wars"/>
 
             <View style={styles.listContent}>
-                {/*ajustar quando puxar os dados*/}
                 <FlatList
                     data={planets}
                     keyExtractor={item => item.name}

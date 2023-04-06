@@ -1,4 +1,4 @@
-import {FlatList, Text, View} from "react-native";
+import {Alert, FlatList, Text, View} from "react-native";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
@@ -12,15 +12,17 @@ import {styles} from "./styles";
 
 
 export function People() {
-    const [people, setPeople] = useState<PeopleDTO[]>();
+    const [people, setPeople] = useState<PeopleDTO[]>([]);
+
 
     async function fetchPeople() {
         try {
             const {data} = await axios.get('https://swapi.dev/api/people');
-            // console.log(typeof data.results)
+
             setPeople(data.results);
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            Alert.alert('Pessoas', 'Não foi possível carregar as pessoas');
         }
     }
 
